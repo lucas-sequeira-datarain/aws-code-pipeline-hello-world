@@ -12,8 +12,13 @@ Parameters:
     Description: Name of the Lambda function handler
   S3BucketName:
     Type: String
-    Default: 'lucas-lambda-function'
+    Default: 'lucas-bucket-hello-world'
     Description: Name of the S3 bucket
+  S3Key:
+    Type: String
+    Default: 'infra/template.yml'
+    Description: Key of the S3 bucket
+
 
 Resources:
   Function:
@@ -24,6 +29,7 @@ Resources:
       Role: !GetAtt FunctionRole.Arn
       Code:
         S3Bucket: !Ref S3BucketName
+        S3Key: !Ref S3Key
       Runtime: python3.9
       Timeout: 10
 
