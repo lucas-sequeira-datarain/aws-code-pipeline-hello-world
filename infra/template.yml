@@ -21,7 +21,7 @@ Resources:
     Properties:
       FunctionName: !Ref FunctionName
       Handler: !Ref Handler
-      Role: !Ref FunctionRole
+      Role: !GetAtt FunctionRole.Arn
       Code:
         S3Bucket: !Ref S3BucketName
       Runtime: python3.9
