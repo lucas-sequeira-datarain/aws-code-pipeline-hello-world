@@ -7,6 +7,7 @@ EXPECTED_RESULT_MULTIPLE = 16.5
 NUMBERS_LIST_SINGLE = [8]
 EXPECTED_RESULT_SINGLE = 8
 
+
 # TESTS
 def test_sum_numbers_multiple():
     """
@@ -14,6 +15,7 @@ def test_sum_numbers_multiple():
     """
 
     assert sum_numbers(NUMBERS_LIST_MULTIPLE) == EXPECTED_RESULT_MULTIPLE
+
 
 def test_sum_numbers_single():
     """

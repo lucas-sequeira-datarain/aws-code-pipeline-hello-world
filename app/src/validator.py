@@ -3,11 +3,11 @@
 def validate_list_of_numbers(numbers: list) -> bool:
     """
     Validates that a list of numbers is a list of numbers.
-    
+
     Params:
     -------
         numbers (list): list of numbers
-    
+
     Returns:
     --------
         bool: True if numbers is a list of integers or float, False otherwise
@@ -22,7 +22,7 @@ def validate_list_of_numbers(numbers: list) -> bool:
     # Check if numbers is not empty
     if valid and len(numbers) == 0:
         valid = False
-    
+
     if valid:
         # Loop through numbers
         for number in numbers:
@@ -31,6 +31,6 @@ def validate_list_of_numbers(numbers: list) -> bool:
             if not isinstance(number, (int, float)):
                 valid = False
                 break
-    
+
     # Return valid
     return valid
