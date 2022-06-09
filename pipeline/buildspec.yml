@@ -21,4 +21,4 @@ phases:
 artifacts:
   files:
     - '**/*'
-  discad-paths: no
+  discard-paths: no
