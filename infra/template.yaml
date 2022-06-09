@@ -1,0 +1,60 @@
+AWSTemplateFormatVersion: '2010-09-09'
+Description: Lambda Function
+
+Parameters:
+  FunctionName:
+    Type: String
+    Default: 'lucas-lambda-function'
+    Description: Name of the Lambda function
+  Handler:
+    Type: String
+    Default: 'lambda_function.lambda_handler'
+    Description: Name of the Lambda function handler
+  S3BucketName:
+    Type: String
+    Default: 'lucas-lambda-function'
+    Description: Name of the S3 bucket
+
+Resources:
+  Function:
+    Type: AWS::Lambda::Function
+    Properties:
+      FunctionName: !Ref FunctionName
+      Handler: !Ref Handler
+      Role: !Ref FunctionRole
+      Code:
+        S3Bucket: !Ref S3BucketName
+      Runtime: python3.9
+      Timeout: 10
+
+  FunctionRole:
+    Type: AWS::IAM::Role
+    Properties:
+      AssumeRolePolicyDocument:
+        Version: '2012-10-17'
+        Statement:
+          - Effect: Allow
+            Principal:
+              Service: lambda.amazonaws.com
+            Action: sts:AssumeRole
+      Path: /
+      Policies:
+        - PolicyName: lambda-policy
+          PolicyDocument:
+            Version: '2012-10-17'
+            Statement:
+              - Effect: Allow
+                Action:
+                  - lambda:InvokeFunction
+                  - lambda:GetFunction
+                  - lambda:GetFunctionConfiguration
+                  - lambda:ListFunctions
+                Resource:
+                  - '*'
+              - Effect: Allow
+                Action:
+                  - logs:CreateLogGroup
+                  - logs:CreateLogStream
+                  - logs:PutLogEvents
+                Resource:
+                  - '*'
