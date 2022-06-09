@@ -40,4 +40,4 @@ jobs:
         pytest
     - name: Lint with cfn-lint
       run: |
-        cfn-lint infra/template.yaml
+        cfn-lint infra/template.yml
