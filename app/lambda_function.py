@@ -2,6 +2,7 @@
 from src.sum import sum_numbers
 from src.validator import validate_list_of_numbers
 
+
 # HANDLER
 def lambda_handler(event, context):
 
@@ -17,7 +18,7 @@ def lambda_handler(event, context):
             'statusCode': 400,
             'body': 'Invalid list of numbers'
         }
-    
+
     # Calculate sum
     sum = sum_numbers(numbers)
 

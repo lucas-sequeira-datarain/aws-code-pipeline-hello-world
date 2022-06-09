@@ -18,6 +18,7 @@ RESPONSE_INVALID = {
     'body': 'Invalid list of numbers'
 }
 
+
 # TESTS
 def test_lambda_handler_valid():
     """
@@ -25,6 +26,7 @@ def test_lambda_handler_valid():
     """
 
     assert lambda_handler(EVENT_VALID, None) == RESPONSE_VALID
+
 
 def test_lambda_handler_invalid():
     """
