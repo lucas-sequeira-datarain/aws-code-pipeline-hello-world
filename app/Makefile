@@ -8,4 +8,4 @@ help:
 
 lint:
 	flake8 --ignore E305,E501,W503 --exclude .git,__pycache
-	bandif -r -lll .
+	bandit -r -lll .
