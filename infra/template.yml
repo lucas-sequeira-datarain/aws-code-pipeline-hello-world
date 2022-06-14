@@ -8,7 +8,7 @@ Parameters:
     Description: Name of the Lambda function
   Handler:
     Type: String
-    Default: 'lambda_function.lambda_handler'
+    Default: 'app.lambda_function.lambda_handler'
     Description: Name of the Lambda function handler
   S3BucketName:
     Type: String
