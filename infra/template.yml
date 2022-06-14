@@ -16,7 +16,7 @@ Parameters:
     Description: Name of the S3 bucket
   S3Key:
     Type: String
-    Default: 'infra/template.yml'
+    Default: 'hello-world/app/lambda_function.py'
     Description: Key of the S3 bucket
 
 
