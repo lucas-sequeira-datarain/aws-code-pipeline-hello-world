@@ -22,3 +22,8 @@ artifacts:
   files:
     - '**/*'
   discard-paths: no
+  secondary-artifacts:
+    artifact1:
+      base-directory: $CODEBUILD_SRC_DIR
+      files:
+        - '**/*'
